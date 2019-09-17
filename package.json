@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "yarn clean && webpack",
-    "start": "node server",
+    "start": "serve -s ui/dist",
     "start-dev": "webpack-dev-server --mode development",
     "webpack": "webpack --mode production"
   },

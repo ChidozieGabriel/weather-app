@@ -1,8 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+
+const htmlWebpackPlugin = new HtmlWebPackPlugin({
+  template: './ui/public/index.html',
+  filename: './index.html',
+});
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './ui/src/index.js',
   mode: 'development',
   module: {
     rules: [
@@ -20,15 +26,15 @@ module.exports = {
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
-    path: path.resolve(__dirname, 'dist/'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, 'ui/dist/'),
+    publicPath: '/',
     filename: 'index.js',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public/'),
+    contentBase: path.join(__dirname, 'ui/public/'),
     port: 3000,
     publicPath: 'http://localhost:3000/dist/',
     hotOnly: true,
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [new webpack.HotModuleReplacementPlugin(), htmlWebpackPlugin],
 };

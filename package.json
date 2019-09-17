@@ -19,6 +19,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-hot-loader": "^4.12.13",
+    "serve": "^11.1.0",
     "webpack": "^4.40.2"
   },
   "devDependencies": {
